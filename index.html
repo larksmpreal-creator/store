@@ -5,113 +5,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChainSMP Store</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
+    body, html {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      overflow-x: hidden;
     }
+
+    /* Background Video */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .video-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+
+    /* Hero */
     header {
-      background: linear-gradient(90deg, #ff0040, #ff7b00);
-      padding: 20px;
       text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
+      padding: 80px 20px 50px;
     }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(255,0,64,0.9);
+    }
+    header a {
+      background: linear-gradient(90deg, #ff0040, #ff7b00);
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 0 25px rgba(255,123,0,0.8);
+      transition: 0.3s;
+    }
+    header a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255,123,0,1);
+    }
+
+    /* Store Grid */
     .store {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+      padding: 50px;
+      z-index: 1;
     }
+
+    /* Rank Cards */
     .rank {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 20px;
+      background: rgba(20,20,20,0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 25px;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
       text-decoration: none;
       color: white;
-      display: block;
+      border: 2px solid rgba(255,255,255,0.08);
+      transition: all 0.35s ease;
     }
     .rank:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 0px 20px #ff0040;
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 123, 0, 0.9);
     }
     .rank img {
       width: 100%;
-      max-height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
+      max-height: 180px;
+      border-radius: 12px;
       margin-bottom: 15px;
+      object-fit: cover;
     }
     .rank h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
       margin: 10px 0;
-      font-size: 1.5rem;
-      color: #ff7b00;
     }
     .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ff0040;
+      margin-top: 10px;
+    }
+
+    /* Sponsor */
+    .sponsor {
+      margin: 60px auto;
+      max-width: 900px;
+      text-align: center;
+      background: linear-gradient(135deg, #ff0040, #ff7b00);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(255,123,0,1);
+    }
+    .sponsor h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .sponsor a {
+      background: #111;
+      padding: 15px 35px;
+      border-radius: 40px;
+      color: white;
+      text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
-      margin: 15px 0;
-      color: #ff0040;
+      transition: 0.3s;
     }
+    .sponsor a:hover {
+      background: white;
+      color: black;
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.8);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    footer a {
+      color: #ff7b00;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    footer a:hover {color: white;}
   </style>
 </head>
 <body>
-  <header>🔥 ChainSMP Store 🔥</header>
-  <div class="store">
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="VIP Rank">
-      <h2>VIP</h2>
-      <p class="price">$50</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="GALAXY Rank">
-      <h2>GALAXY</h2>
-      <p class="price">$80</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="MVP Rank">
-      <h2>MVP</h2>
-      <p class="price">$100</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="UNSTAPABLE Rank">
-      <h2>UNSTAPABLE</h2>
-      <p class="price">$120</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="UNSTAPABLE+ Rank">
-      <h2>UNSTAPABLE+</h2>
-      <p class="price">$150</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="CHAIN Rank">
-      <h2>CHAIN</h2>
-      <p class="price">$180</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="CHAIN+ Rank">
-      <h2>CHAIN+</h2>
-      <p class="price">$200</p>
-    </a>
-
-    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="GLORRY+++ Rank">
-      <h2>GLORRY+++</h2>
-      <p class="price">$300</p>
-    </a>
-
+  <!-- Meteor YouTube Background -->
+  <div class="video-bg">
+    <iframe 
+      src="https://www.youtube.com/embed/G6VVTOcStZE?autoplay=1&mute=1&loop=1&controls=0&playlist=G6VVTOcStZE" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
   </div>
+  <div class="overlay"></div>
+
+  <!-- Hero -->
+  <header>
+    <h1>🔥 ChainSMP Store 🔥</h1>
+    <a href="https://discord.gg/QTb963Jt" target="_blank">JOIN SERVER</a>
+  </header>
+
+  <!-- Ranks -->
+  <div class="store">
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>VIP</h2>
+      <p class="price">₱50</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>GALAXY</h2>
+      <p class="price">₱80</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>MVP</h2>
+      <p class="price">₱100</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>UNSTAPABLE</h2>
+      <p class="price">₱120</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>UNSTAPABLE+</h2>
+      <p class="price">₱150</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>CHAIN</h2>
+      <p class="price">₱180</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>CHAIN+</h2>
+      <p class="price">₱200</p>
+    </a>
+    <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <h2>GLORRY+++</h2>
+      <p class="price">₱300</p>
+    </a>
+  </div>
+
+  <!-- Sponsor -->
+  <div class="sponsor">
+    <h2>🚀 Sponsored: Join ChainSMP Now!</h2>
+    <a href="https://discord.gg/QTb963Jt" target="_blank">CLICK TO JOIN</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ChainSMP Store • 
+    <a href="https://discord.gg/QTb963Jt" target="_blank">Discord</a> • 
+    <a href="#">Terms</a> • 
+    <a href="#">Privacy</a>
+  </footer>
 </body>
 </html>
