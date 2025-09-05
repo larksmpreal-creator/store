@@ -19,19 +19,22 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
+      width: 100vw;
+      height: 100vh;
       overflow: hidden;
+      z-index: -2;
     }
     .video-bg iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      width: 177.77vh; /* 16:9 aspect ratio */
+      height: 100vh;
+      transform: translate(-50%, -50%);
       pointer-events: none;
+      border: none;
+      min-width: 100vw;
+      min-height: 100vh;
     }
 
     /* Dark Overlay */
@@ -163,10 +166,10 @@
   </style>
 </head>
 <body>
-  <!-- Meteor YouTube Background -->
+  <!-- Background Video -->
   <div class="video-bg">
     <iframe 
-      src="https://www.youtube.com/embed/G6VVTOcStZE?autoplay=1&mute=1&loop=1&controls=0&playlist=G6VVTOcStZE" 
+      src="https://www.youtube.com/embed/2viyHE1A1sc?autoplay=1&mute=1&loop=1&controls=0&playlist=2viyHE1A1sc&modestbranding=1&rel=0" 
       allow="autoplay; encrypted-media" 
       allowfullscreen>
     </iframe>
@@ -182,42 +185,42 @@
   <!-- Ranks -->
   <div class="store">
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="VIP Rank">
       <h2>VIP</h2>
       <p class="price">₱50</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="GALAXY Rank">
       <h2>GALAXY</h2>
       <p class="price">₱80</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="MVP Rank">
       <h2>MVP</h2>
       <p class="price">₱100</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="UNSTAPABLE Rank">
       <h2>UNSTAPABLE</h2>
       <p class="price">₱120</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="UNSTAPABLE+ Rank">
       <h2>UNSTAPABLE+</h2>
       <p class="price">₱150</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="CHAIN Rank">
       <h2>CHAIN</h2>
       <p class="price">₱180</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="CHAIN+ Rank">
       <h2>CHAIN+</h2>
       <p class="price">₱200</p>
     </a>
     <a href="https://discord.gg/QTb963Jt" target="_blank" class="rank">
-      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg">
+      <img src="https://i.ibb.co/4RNvFpYh/Screenshot-20250905-174501-Gallery.jpg" alt="GLORRY+++ Rank">
       <h2>GLORRY+++</h2>
       <p class="price">₱300</p>
     </a>
